@@ -165,7 +165,7 @@ while rounds_played < num_rounds:
     # Set up round feedback and output it user.
     # Add it to the game history list (include the round number)
     round_feedback = f"{user_choice} vs {comp_choice}, {feedback}"
-    history_item = f"Round: {rounds_played} - {round_feedback}"
+    history_item = f"Round: {rounds_played + 1} - {round_feedback}"
 
     print(round_feedback)
     game_history.append(history_item)
@@ -184,7 +184,7 @@ if rounds_played > 0:
     # Calculate Statistics
     rounds_won = rounds_played - rounds_tied - rounds_lost
     percent_won = rounds_won / rounds_played * 100
-    percent_lost = rounds_lost / rounds_lost * 100
+    percent_lost = rounds_lost / rounds_played * 100
     percent_tied = 100 - percent_won - percent_lost
 
     # Output game statistics
